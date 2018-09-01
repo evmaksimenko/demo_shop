@@ -1,0 +1,40 @@
+a {
+    color: #0000cd; /* Цвет обычной ссылки */
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
+a:visited {
+    color: #0000cd; /* Цвет посещённой ссылки */
+}
+a:hover {
+    color: #e53936; /* Цвет ссылки при наведении на нее курсора мыши */
+}
+a.price {
+    color: #000000; /* Цвет обычной ссылки */
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    font-size: 25px;
+    font-weight: bold;
+}
+a.price:visited {
+    color: #000000; /* Цвет посещённой ссылки */
+}
+a.price:hover {
+    color: #000000; /* Цвет ссылки при наведении на нее курсора мыши */
+}
+table {
+    width: 75%; /* Ширина таблицы */
+    border: 0px; /* Рамка вокруг таблицы */
+    margin: auto; /* Выравниваем таблицу по центру окна  */
+}
+td {
+    text-align: center; /* Выравнивание по центру */
+    width: 15%;
+}
+td.price {
+    text-align: left;
+    width: 15%;
+}
+td.name {
+    vertical-align: top;
+    text-align: left;
+    padding-bottom: 30px;
+}
