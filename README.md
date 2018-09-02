@@ -6,7 +6,10 @@
 - страница с данными конкретного товара.
 
 ## Требования
-Для работы проекта требуется python3.
+Для работы проекта требуется python3, библиотеки alembic, click, Flask,
+Flask-Migrate, Flask-SQLAlchemy, itsdangerous, Jinja2, Mako,
+MarkupSafe, python-dateutil, python-editor, six, SQLAlchemy, Werkzeug.
+
 Зависимости проекта приведены в файле requirements.txt.
 Для установки зависимостей выполните следующую команду:
 
