@@ -33,11 +33,15 @@ def index():
 
 @app.route('/items/<string:item_id>')
 def show_item_info(item_id):
-    item = Item.query.filter_by(code=item_id).first()
-    if not item:
-        return redirect(url_for('index'))
+    item = Item.query.filter_by(code=item_id).first_or_404()
     desc = (item.description).split('\n')
-    return render_template('item.html', item=item, desc=desc)
+    return render_template('item.html', item=item, desc=desc, title=item.name[:20])
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    # note that we set the 404 status explicitly
+    return render_template('404.html'), 404
 
 
 if __name__ == '__main__':
