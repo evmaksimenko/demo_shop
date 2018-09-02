@@ -27,7 +27,7 @@ MarkupSafe, python-dateutil, python-editor, six, SQLAlchemy, Werkzeug.
 
 Для запуска выполните команду в директории проекта 
 
-**python app.py**
+**python demo_shop.py**
 
 После этого откройте при помощи браузера страницу приложения localhost:5000.
 По умолчанию отобразится страница со списком всех товаров. 
