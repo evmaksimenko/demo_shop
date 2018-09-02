@@ -1,38 +1,33 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        {% if title %}
-            <title>{{ title }}</title>
-        {% else %}
-            <title>Welcome!</title>
-        {% endif %}
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}" />
-    </head>
-    <body>
-        <table><tr><th><h1>Популярные товары</h1></th></tr></table>
-        <table cellpadding="5">
-            {% for rowitem in items %}
-                <tr>
-                    {% for item in rowitem %}
-                        {% set thumb_filename = 'img/' + item.code + "thumb.jpeg" %}
-                        <td>
-                            <a href="{{ url_for("show_item_info", item_id=item.code) }}">
-                                <img src="{{ url_for('static', filename=thumb_filename)}}">
-                            </a>
-                        </td>
-                    {% endfor %}
-                </tr>
-                <tr>
-                    {% for item in rowitem %}
-                        <td class="price"><a href="{{ url_for("show_item_info", item_id=item.code) }}" class="price">{{ item.price }} Руб</a></td>
-                    {% endfor %}
-                </tr>
-                <tr>
-                    {% for item in rowitem %}
-                        <td class="name"><a href="{{ url_for("show_item_info", item_id=item.code) }}">{{ item.name|truncate(50, False, '', 0)}}</a></td>
-                    {% endfor %}
-                </tr>
-            {% endfor %}
-        </table>
-    </body>
-</html>
+{% extends "base.html" %}
+
+{% block head_link %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}" />
+{% endblock %}
+
+{% block content %}
+    <table><tr><th><h1>Популярные товары</h1></th></tr></table>
+    <table cellpadding="5">
+        {% for rowitem in items %}
+            <tr>
+                {% for item in rowitem %}
+                    {% set thumb_filename = 'img/' + item.code + "thumb.jpeg" %}
+                    <td>
+                        <a href="{{ url_for("show_item_info", item_id=item.code) }}">
+                            <img src="{{ url_for('static', filename=thumb_filename)}}">
+                        </a>
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                {% for item in rowitem %}
+                    <td class="price"><a href="{{ url_for("show_item_info", item_id=item.code) }}" class="price">{{ item.price }} Руб</a></td>
+                {% endfor %}
+            </tr>
+            <tr>
+                {% for item in rowitem %}
+                    <td class="name"><a href="{{ url_for("show_item_info", item_id=item.code) }}">{{ item.name|truncate(50, False, '', 0)}}</a></td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
